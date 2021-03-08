@@ -1,34 +1,31 @@
-# Adafruit BME280 Library [![Build Status](https://github.com/adafruit/Adafruit_BME280_Library/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_BME280_Library/actions)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](http://adafruit.github.io/Adafruit_BME280_Library/html/index.html)
-
-
-<a href="http://www.adafruit.com/products/2652"><img src="./assets/board.jpg" width="500"/></a>
+# Adafruit BME280 Library [![Build Status](https://github.com/TINLES2021/Adafruit_BME280_Library/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/TINLES2021/Adafruit_BME280_Library/actions)
 
 This is a library for the Adafruit BME280 Humidity, Barometric Pressure + Temp sensor
 
-Designed specifically to work with the Adafruit BME280 Breakout 
- * http://www.adafruit.com/products/2652
+Designed specifically to work with the [Adafruit BME280 Breakout](http://www.adafruit.com/products/2652). We are currently using the [BME 280 Breakout](https://shop.pimoroni.com/products/bme280-breakout).
 
-Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!
+*Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!*
 
 # Installation
-To install, use the Arduino Library Manager and search for "Adafruit BME280" and install the library.
+In the Energia IDE, navigate to Sketch > Include Library > Add .ZIP Library. At the top of the drop down list, select the option to "Add .ZIP Library". Here you can select this ZIP file.
+
+If you want to contribute to this repository, there is a better way. Please see [Contributing](#Contributing)
 
 ## Dependencies
+Because this library is not installed via the built-in Library Manager, the dependency will also not be installed manually. Therefore, you will have to install that as well. Please download the ZIP from their repository to get the latest version.
+
  * [Adafruit Unified Sensor Driver](https://github.com/adafruit/Adafruit_Sensor)
 
 # Contributing
+Contributions are welcome! Please stay civil.
 
-Contributions are welcome! Please read our [Code of Conduct](https://github.com/adafruit/Adafruit_PM25AQI/blob/master/CODE_OF_CONDUCT.md>)
-before contributing to help this project stay welcoming.
+If you want to use this library in Energia while contributing, the easiest way is to clone this repository in your libraries folder.
 
-## Documentation and doxygen
-Documentation is produced by doxygen. Contributions should include documentation for any new code added.
+```bash
+git clone https://github.com/TINLES2021/Adafruit_BME280_Library.git
+```
 
-Some examples of how to use doxygen can be found in these guide pages:
-
-https://learn.adafruit.com/the-well-automated-arduino-library/doxygen
-
-https://learn.adafruit.com/the-well-automated-arduino-library/doxygen-tips
+Please note that you have to be a contributor of TINLES2021 to push to this repository. If you are not, then you will have to fork first.
 
 ## Formatting and clang-format
 This library uses [`clang-format`](https://releases.llvm.org/download.html) to standardize the formatting of `.cpp` and `.h` files.

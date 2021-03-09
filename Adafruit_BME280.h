@@ -6,7 +6,7 @@
  *
  * These sensors use I2C or SPI to communicate, 2 or 4 pins are required
  * to interface.
- * 
+ *
  * NOTE: This version only allows I2C, because Energia has trouble handling SPI
  * on default.
  *
@@ -41,8 +41,7 @@
 /*!
  *  @brief Register addresses
  */
-enum
-{
+enum {
   BME280_REGISTER_DIG_T1 = 0x88,
   BME280_REGISTER_DIG_T2 = 0x8A,
   BME280_REGISTER_DIG_T3 = 0x8C,
@@ -84,8 +83,7 @@ enum
     @brief  calibration data
 */
 /**************************************************************************/
-typedef struct
-{
+typedef struct {
   uint16_t dig_T1; ///< temperature compensation value
   int16_t dig_T2;  ///< temperature compensation value
   int16_t dig_T3;  ///< temperature compensation value
@@ -112,8 +110,7 @@ typedef struct
 class Adafruit_BME280;
 
 /** Adafruit Unified Sensor interface for temperature component of BME280 */
-class Adafruit_BME280_Temp : public Adafruit_Sensor
-{
+class Adafruit_BME280_Temp : public Adafruit_Sensor {
 public:
   /** @brief Create an Adafruit_Sensor compatible object for the temp sensor
       @param parent A pointer to the BME280 class */
@@ -127,8 +124,7 @@ private:
 };
 
 /** Adafruit Unified Sensor interface for pressure component of BME280 */
-class Adafruit_BME280_Pressure : public Adafruit_Sensor
-{
+class Adafruit_BME280_Pressure : public Adafruit_Sensor {
 public:
   /** @brief Create an Adafruit_Sensor compatible object for the pressure sensor
       @param parent A pointer to the BME280 class */
@@ -142,8 +138,7 @@ private:
 };
 
 /** Adafruit Unified Sensor interface for humidity component of BME280 */
-class Adafruit_BME280_Humidity : public Adafruit_Sensor
-{
+class Adafruit_BME280_Humidity : public Adafruit_Sensor {
 public:
   /** @brief Create an Adafruit_Sensor compatible object for the humidity sensor
       @param parent A pointer to the BME280 class */
@@ -161,16 +156,14 @@ private:
     @brief  Class that stores state and functions for interacting with BME280 IC
 */
 /**************************************************************************/
-class Adafruit_BME280
-{
+class Adafruit_BME280 {
 public:
   /**************************************************************************/
   /*!
       @brief  sampling rates
   */
   /**************************************************************************/
-  enum sensor_sampling
-  {
+  enum sensor_sampling {
     SAMPLING_NONE = 0b000,
     SAMPLING_X1 = 0b001,
     SAMPLING_X2 = 0b010,
@@ -184,8 +177,7 @@ public:
       @brief  power modes
   */
   /**************************************************************************/
-  enum sensor_mode
-  {
+  enum sensor_mode {
     MODE_SLEEP = 0b00,
     MODE_FORCED = 0b01,
     MODE_NORMAL = 0b11
@@ -196,8 +188,7 @@ public:
       @brief  filter values
   */
   /**************************************************************************/
-  enum sensor_filter
-  {
+  enum sensor_filter {
     FILTER_OFF = 0b000,
     FILTER_X2 = 0b001,
     FILTER_X4 = 0b010,
@@ -210,8 +201,7 @@ public:
       @brief  standby duration in ms
   */
   /**************************************************************************/
-  enum standby_duration
-  {
+  enum standby_duration {
     STANDBY_MS_0_5 = 0b000,
     STANDBY_MS_10 = 0b110,
     STANDBY_MS_20 = 0b111,
@@ -276,9 +266,9 @@ protected:
 
   uint8_t _i2caddr;  //!< I2C addr for the TwoWire interface
   int32_t _sensorID; //!< ID of the BME Sensor
-  int32_t t_fine;    //!< temperature with high resolution, stored as an attribute
-                     //!< as this is used for temperature compensation reading
-                     //!< humidity and pressure
+  int32_t t_fine; //!< temperature with high resolution, stored as an attribute
+                  //!< as this is used for temperature compensation reading
+                  //!< humidity and pressure
 
   int32_t t_fine_adjust = 0; //!< add to compensate temp readings and in turn
                              //!< to pressure and humidity readings
@@ -290,8 +280,7 @@ protected:
       @brief  config register
   */
   /**************************************************************************/
-  struct config
-  {
+  struct config {
     // inactive duration (standby time) in normal mode
     // 000 = 0.5 ms
     // 001 = 62.5 ms
@@ -325,8 +314,7 @@ protected:
       @brief  ctrl_meas register
   */
   /**************************************************************************/
-  struct ctrl_meas
-  {
+  struct ctrl_meas {
     // temperature oversampling
     // 000 = skipped
     // 001 = x1
@@ -361,8 +349,7 @@ protected:
       @brief  ctrl_hum register
   */
   /**************************************************************************/
-  struct ctrl_hum
-  {
+  struct ctrl_hum {
     /// unused - don't set
     unsigned int none : 5;
 
